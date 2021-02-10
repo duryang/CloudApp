@@ -1,6 +1,10 @@
 package ps.exalt.training.gor.cloudapp.models;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+import org.springframework.data.aerospike.annotation.*;
 import org.springframework.data.annotation.Id;
+
+import javax.annotation.Generated;
 
 public class Application {
 
@@ -8,7 +12,7 @@ public class Application {
     private Integer id;
     private String name;
     private Integer storage;
-    private Server server;
+    private Integer serverId;
     private DbType dbType;
 
     // region Getters and setters
@@ -37,12 +41,12 @@ public class Application {
         this.storage = storage;
     }
 
-    public Server getServer() {
-        return server;
+    public Integer getServerId() {
+        return serverId;
     }
 
-    public void setServer(Server server) {
-        this.server = server;
+    public void setServerId(Integer serverId) {
+        this.serverId = serverId;
     }
 
     public DbType getDbType() {

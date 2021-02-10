@@ -1,24 +1,28 @@
 package ps.exalt.training.gor.cloudapp.models;
 
+import com.aerospike.client.policy.GenerationPolicy;
+import org.springframework.data.aerospike.mapping.Field;
 import org.springframework.data.annotation.Id;
 
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Server {
 
     public Server(DbType dbType) {
+        this.id = 1;
         this.dbType = dbType;
-        this.applications = new ArrayList<Application>();
+        this.applicationIds = new ArrayList<Long>();
     }
 
     @Id
     private Integer id;
     private DbType dbType;
     private final Integer maxStorage = 100;
-    private Integer usedStorage;
-    private Integer freeStorage;
-    private List<Application> applications;
+    private Integer usedStorage = 0;
+    private Integer freeStorage = 100;
+    private List<Long> applicationIds;
 
     // region Getters and setters
 
@@ -58,12 +62,12 @@ public class Server {
         this.freeStorage = freeStorage;
     }
 
-    public List<Application> getApplications() {
-        return applications;
+    public List<Long> getApplicationIds() {
+        return applicationIds;
     }
 
-    public void setApplications(List<Application> applications) {
-        this.applications = applications;
+    public void setApplicationIds(List<Long> applicationIds) {
+        this.applicationIds = applicationIds;
     }
 
     // endregion

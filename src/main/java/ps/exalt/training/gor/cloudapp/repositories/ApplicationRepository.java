@@ -4,6 +4,6 @@ import org.springframework.data.aerospike.repository.AerospikeRepository;
 import org.springframework.stereotype.Repository;
 import ps.exalt.training.gor.cloudapp.models.Application;
 
-@Repository
+//@Repository
 public interface ApplicationRepository extends AerospikeRepository<Application, Integer> {
 }

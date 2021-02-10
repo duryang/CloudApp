@@ -8,8 +8,6 @@ import org.springframework.data.aerospike.repository.config.EnableAerospikeRepos
 import org.springframework.stereotype.Controller;
 
 @SpringBootApplication
-//@EntityScan(basePackages = "ps.exalt.training.gor.cloudapp.repositories")
-//@ComponentScan({ "ps.exalt.training.gor.cloudapp.repositories" })
 public class CloudAppApplication {
 
 	public static void main(String[] args) {
